@@ -11,12 +11,10 @@ const schemaDefObj = {
         require: true
     },
     phoneNumber: {
-        type: String,
-        require: true
+        type: String
     },
     emailAddress: {
-        type: String,
-        require: true
+        type: String
     },
     rating: {
         type: number,

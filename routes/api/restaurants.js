@@ -23,12 +23,12 @@ router.post("/", (req, res,next)=> {
         phoneNumber: req.body.phoneNumber,
         emailAddress: req.body.emailAddress,
         rating: req.body.rating
-    }, (err, newRestaurant) => {
+    }, (err, newrestaurant) => {
         if (err) {
             console.log(err);
             res.status(500).json({'ErrorMessage':'Server threw an exception'});
         }else{
-            res.status(200).json(newRestaurant);
+            res.status(200).json(newrestaurant);
         }
     }
     )}

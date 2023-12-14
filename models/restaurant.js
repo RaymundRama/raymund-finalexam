@@ -17,7 +17,7 @@ const schemaDefObj = {
         type: String
     },
     rating: {
-        type: number,
+        type: Number,
         minimum: 0,
         exclusiveMaximum: 10
     }

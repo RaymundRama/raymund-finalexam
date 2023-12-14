@@ -9,7 +9,7 @@ var configs = require("./config/globals");
 
 var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
-// TODO ROUTER 
+var restaurantsRouter = require('./routes/api/restaurants');
 
 var app = express();
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 //app.use('/users', usersRouter);
-//TODO app.use for router
+app.use('/api/restaurants', restaurantsRouter)
 
 mongoose.connect(configs.db, {
   useNewUrlParser: true, useUnifiedTopology: true,

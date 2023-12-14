@@ -37,8 +37,9 @@ router.post("/", (req, res,next)=> {
 
 // Read mapped to GET
 router.get("/", async (req,res,next)=>{
-    let restaurants = await Restaurant.find();
+    let restaurants = await Restaurant.find().limit(10);
     res.status(200).json(restaurants)
+
 })
 
 

@@ -13,9 +13,9 @@ const Restaurant = require("../../models/restaurant")
 // Create mapped to POST
 router.post("/", (req, res,next)=> {
     if (!req.body.name){
-        res.status(400).json({'ValidationError': 'firstname is a required field'});
+        res.status(400).json({'ValidationError': 'name is a required field'});
     }else if (!req.body.address){
-        res.status(400).json({'ValidationError': 'Address is a required field'});
+        res.status(400).json({'ValidationError': 'address is a required field'});
     } else {
         Restaurant.create({
         name: req.body.name,
@@ -36,7 +36,7 @@ router.post("/", (req, res,next)=> {
 
 
 // Read mapped to GET
-router.get("/", async (req,res,next)=>{    
+router.get("/", async (req,res,next)=>{
     let restaurants = await Restaurant.find().limit(10);
     res.status(200).json(restaurants)
 
@@ -55,7 +55,7 @@ router.delete('/:_id', (req,res, next) => {
             console.log(err) // server threw up (ewwww)
             res.status(500).json({'ErrorMessage': 'Server threw exception'});
         } else {
-            res.status(200).json({"Succes":"true"});
+            res.status(200).json({"Success":"true"});
         }
     })
 })
